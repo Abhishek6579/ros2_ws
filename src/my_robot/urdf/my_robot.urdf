@@ -23,6 +23,25 @@
             <origin xyz="0 0 0.1" rpy="0 0 0" />
             <material name="green" />
         </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.6 0.4 0.2" />
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0.1" rpy="0 0 0"/>
+            <mass value="0.600"/>
+            <inertia
+                ixx="0.010"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.020"
+                iyz="0.0"
+                izz="0.026"/>
+        </inertial>
     </link>
 
     <link name="left_wheel">
@@ -33,6 +52,25 @@
             <origin xyz="0 0 0" rpy="1.57 0 0" />
             <material  name="grey" />
         </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.57 0 0" />
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <mass value="0.050"/>
+            <inertia
+                ixx="0.000135"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.000135"
+                iyz="0.0"
+                izz="0.000250"/>
+        </inertial>
     </link>
 
     <link name="right_wheel">
@@ -43,6 +81,25 @@
             <origin xyz="0 0 0" rpy="1.57 0 0" />
             <material  name="grey" />
         </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.57 0 0" />
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <mass value="0.050"/>
+            <inertia
+                ixx="0.000135"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.000135"
+                iyz="0.0"
+                izz="0.000250"/>
+        </inertial>
     </link>
 
     <link name="caster_wheel">
@@ -53,6 +110,25 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
             <material name="grey" />
         </visual>
+
+        <collision>
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <mass value="0.025"/>
+            <inertia
+                ixx="0.000025"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.000025"
+                iyz="0.0"
+                izz="0.000025"/>
+        </inertial>
     </link>
 
     <joint name="base_joint" type="fixed">
