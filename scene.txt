@@ -1,0 +1,352 @@
+ambient {
+  r: 0.4
+  g: 0.4
+  b: 0.4
+  a: 1
+}
+background {
+  r: 0.7
+  g: 0.7
+  b: 0.7
+  a: 1
+}
+shadows: true
+grid: true
+model {
+  name: "ground_plane"
+  id: 4
+  pose {
+    position {
+    }
+    orientation {
+      w: 1
+    }
+  }
+  link {
+    id: 5
+    name: "link"
+    pose {
+      position {
+      }
+      orientation {
+        w: 1
+      }
+    }
+    visual {
+      name: "visual"
+      id: 6
+      parent_id: 5
+      cast_shadows: true
+      pose {
+        position {
+        }
+        orientation {
+          w: 1
+        }
+      }
+      geometry {
+        type: PLANE
+        plane {
+          normal {
+            z: 1
+          }
+          size {
+            x: 100
+            y: 100
+          }
+        }
+      }
+      material {
+        ambient {
+          r: 0.8
+          g: 0.8
+          b: 0.8
+          a: 1
+        }
+        diffuse {
+          r: 0.8
+          g: 0.8
+          b: 0.8
+          a: 1
+        }
+        specular {
+          r: 0.8
+          g: 0.8
+          b: 0.8
+          a: 1
+        }
+        emissive {
+          a: 1
+        }
+        lighting: true
+      }
+    }
+  }
+}
+model {
+  name: "my_robot"
+  id: 10
+  pose {
+    position {
+      x: -1.1102230246251565e-22
+      z: 0.9999902
+    }
+    orientation {
+      w: 1
+    }
+  }
+  link {
+    id: 11
+    name: "base_footprint"
+    pose {
+      position {
+      }
+      orientation {
+        w: 1
+      }
+    }
+    visual {
+      name: "base_footprint_fixed_joint_lump__base_link_visual"
+      id: 12
+      parent_id: 11
+      cast_shadows: true
+      pose {
+        position {
+          z: 0.2
+        }
+        orientation {
+          w: 1
+        }
+      }
+      geometry {
+        box {
+          size {
+            x: 0.6
+            y: 0.4
+            z: 0.2
+          }
+        }
+      }
+      material {
+        ambient {
+          g: 0.75000006
+          a: 1
+        }
+        diffuse {
+          g: 0.75000006
+          a: 1
+        }
+        specular {
+          a: 1
+        }
+        emissive {
+          a: 1
+        }
+        lighting: true
+      }
+    }
+    visual {
+      name: "base_footprint_fixed_joint_lump__caster_wheel_visual_1"
+      id: 13
+      parent_id: 11
+      cast_shadows: true
+      pose {
+        position {
+          x: 0.2
+          z: 0.05
+        }
+        orientation {
+          w: 1
+        }
+      }
+      geometry {
+        type: SPHERE
+        sphere {
+          radius: 0.05
+        }
+      }
+      material {
+        ambient {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        diffuse {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        specular {
+          a: 1
+        }
+        emissive {
+          a: 1
+        }
+        lighting: true
+      }
+    }
+  }
+  link {
+    id: 16
+    name: "left_wheel"
+    pose {
+      position {
+        x: -0.15
+        y: 0.225
+        z: 0.10000000000000009
+      }
+      orientation {
+        w: 1
+      }
+    }
+    visual {
+      name: "left_wheel_visual"
+      id: 17
+      parent_id: 16
+      cast_shadows: true
+      pose {
+        position {
+        }
+        orientation {
+          x: 0.706825181105366
+          w: 0.70738826916719977
+        }
+      }
+      geometry {
+        type: CYLINDER
+        cylinder {
+          radius: 0.1
+          length: 0.05
+        }
+      }
+      material {
+        ambient {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        diffuse {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        specular {
+          a: 1
+        }
+        emissive {
+          a: 1
+        }
+        lighting: true
+      }
+    }
+  }
+  link {
+    id: 19
+    name: "right_wheel"
+    pose {
+      position {
+        x: -0.15
+        y: -0.225
+        z: 0.10000000000000009
+      }
+      orientation {
+        w: 1
+      }
+    }
+    visual {
+      name: "right_wheel_visual"
+      id: 20
+      parent_id: 19
+      cast_shadows: true
+      pose {
+        position {
+        }
+        orientation {
+          x: 0.706825181105366
+          w: 0.70738826916719977
+        }
+      }
+      geometry {
+        type: CYLINDER
+        cylinder {
+          radius: 0.1
+          length: 0.05
+        }
+      }
+      material {
+        ambient {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        diffuse {
+          r: 0.875
+          g: 0.875
+          b: 0.875
+          a: 1
+        }
+        specular {
+          a: 1
+        }
+        emissive {
+          a: 1
+        }
+        lighting: true
+      }
+    }
+  }
+}
+light {
+  header {
+    data {
+      key: "isLightOn"
+      value: "1"
+    }
+    data {
+      key: "visualizeVisual"
+      value: "1"
+    }
+  }
+  name: "sun"
+  type: DIRECTIONAL
+  pose {
+    position {
+      z: 10
+    }
+    orientation {
+      w: 1
+    }
+  }
+  diffuse {
+    r: 0.8
+    g: 0.8
+    b: 0.8
+    a: 1
+  }
+  specular {
+    r: 0.2
+    g: 0.2
+    b: 0.2
+    a: 1
+  }
+  attenuation_constant: 0.9
+  attenuation_linear: 0.01
+  attenuation_quadratic: 0.001
+  direction {
+    x: -0.5
+    y: 0.1
+    z: -0.9
+  }
+  range: 1000
+  cast_shadows: true
+  id: 8
+  parent_id: 1
+  intensity: 1
+}
+origin_visual: true
+

@@ -1,6 +1,20 @@
 <?xml version="1.0"?>
 <robot name="my_robot">
+    <gazebo>
+    <plugin
+        filename="ignition-gazebo-diff-drive-system"
+        name="gz::sim::systems::DiffDrive">
 
+        <left_joint>base_left_wheel_joint</left_joint>
+        <right_joint>base_right_wheel_joint</right_joint>
+
+        <wheel_separation>0.45</wheel_separation>
+        <wheel_radius>0.1</wheel_radius>
+
+        <topic>/cmd_vel</topic>
+
+    </plugin>
+    </gazebo>
     <material name='grey'>
         <color rgba="0.7 0.7 0.7 1" />
     </material>
@@ -13,7 +27,19 @@
         <color rgba="0 0.6 0 1" />
     </material>
 
-    <link name="base_footprint" />
+    <link name="base_footprint">
+        <inertial>
+            <mass value="0.001"/>
+            <origin xyz="0 0 0"/>
+            <inertia
+            ixx="0.0001"
+            ixy="0.0"
+            ixz="0.0"
+            iyy="0.0001"
+            iyz="0.0"
+            izz="0.0001"/>
+        </inertial>
+    </link>
 
     <link name="base_link">
         <visual>
